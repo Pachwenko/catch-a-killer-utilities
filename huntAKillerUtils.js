@@ -1,5 +1,7 @@
 const THREE_NUM_BOOK_CIPHER_ID = "three-num-book-cipher";
 
+// cipher logic
+
 function threeNumBookCipher() {
   let mainDiv = document.getElementById(THREE_NUM_BOOK_CIPHER_ID);
   let inputText = mainDiv.getElementsByClassName("input-book")[0].value;
@@ -8,11 +10,15 @@ function threeNumBookCipher() {
   if (!(inputText && inputCipher && resultsElement)) {
     return;
   }
-  // console.log(mainDiv);
-  // console.log(inputText);
-  // console.log(inputCipher);
-  // console.log(resultsElement);
+  console.log(mainDiv);
+  console.log(inputText);
+  console.log(inputCipher);
+  console.log(resultsElement);
 }
+
+// end cipher logic
+
+// Saves stuff
 
 function saveThreeNumBookCipher() {
   let mainDiv = document.getElementById(THREE_NUM_BOOK_CIPHER_ID);
@@ -63,7 +69,9 @@ function loadSelectedSave(saveId) {
   }
   let mainDiv = document.getElementById(saveId);
   let dropdown = mainDiv.getElementsByClassName("previousSaves")[0];
-  let selectedTimestamp = Number(dropdown.options[dropdown.selectedIndex].value);
+  let selectedTimestamp = Number(
+    dropdown.options[dropdown.selectedIndex].value
+  );
   if (!selectedTimestamp) {
     return;
   }
@@ -93,10 +101,14 @@ function populateSavesDropdown(saveId) {
 function deleteSaves(saveId) {
   if (confirm(`Are you sure you want to delete all saves for ${saveId}?`)) {
     localStorage.removeItem(saveId);
-    populateSavesDropdown(saveId);
+    let mainDiv = document.getElementById(saveId);
+    let dropdown = mainDiv.getElementsByClassName("previousSaves")[0];
+    dropdown.replaceChildren(); // remove anything there currently
   }
 }
 
 window.onload = function () {
   populateSavesDropdown(THREE_NUM_BOOK_CIPHER_ID);
 };
+
+// end saves stuff
