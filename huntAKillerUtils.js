@@ -78,9 +78,10 @@ function populateSavesDropdown(saveId) {
   if (!saveData) {
     return;
   }
+  let mainDiv = document.getElementById(saveId);
+  let dropdown = mainDiv.getElementsByClassName("previousSaves")[0];
+  dropdown.replaceChildren(); // remove anything there currently
   saveData.forEach((save) => {
-    let mainDiv = document.getElementById(saveId);
-    let dropdown = mainDiv.getElementsByClassName("previousSaves")[0];
     let localTimestamp = new Date(save.timestamp).toLocaleTimeString("en-US");
     let option = document.createElement("option");
     option.innerHTML = localTimestamp;
