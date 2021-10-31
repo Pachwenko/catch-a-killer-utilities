@@ -1,28 +1,51 @@
 <html>
+
 <head>
     <title>Hunt A Killer Cipher Utilities</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="huntAKillerUtils.js"></script>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@tailwindcss/custom-forms@0.2.1/dist/custom-forms.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="overflow-hidden m-2 text-gray-200 bg-gray-900">
+<body onload="populateSavesDropdown('three-num-book-cipher')" class="overflow-hidden m-2 text-gray-200 bg-gray-900">
     <div class="m-4">
         <h1 class="text-3xl font-extrabold">Hunt A Killer Cipher Utilities</h1>
-        <p>Some useful tools made to aid in figuring out the puzzles during the <a href="https://www.huntakiller.com/" class="underline text-blue-300 hover:text-blue-400 visited:text-purple-500">murder myster game Hunt A Killer</a>.</p>
+        <p>Some useful tools made to aid in figuring out the puzzles during the <a href="https://www.huntakiller.com/"
+                class="underline text-blue-300 hover:text-blue-400 visited:text-purple-500">murder myster game Hunt A
+                Killer</a>.</p>
     </div>
     <div id="three-num-book-cipher" class="container border-4 border-black p-3 mx-auto">
         <h2 class="text-xl font-extrabold">Three number book cipher</h1>
-        <br />
-        <textarea class="input-book text-white bg-gray-700 w-3/4 border-2 border-green-600 p-2 m-2" id="book-text" placeholder="The book to use"></textarea>
-        <br />
-        <textarea class="input-cipher text-white bg-gray-700 w-3/4 border-2 border-green-600 p-2 m-2" id="book-cipher" placeholder="The numbers (cipher) like 1/2/3 /6/1/1"></textarea>
-        <br />
-        <button class="flex-shrink-0 bg-purple-600 text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200" onclick="threeNumBookCipher()" id="three-num-book-cipher-button">Deciper</button>
-        <br />
-        <p class="result"></p>
+            <br />
+            <textarea class="input-book text-white bg-gray-700 w-3/4 border-2 border-green-600 p-2 m-2" id="book-text"
+                placeholder="The book to use"></textarea>
+            <br />
+            <textarea class="input-cipher text-white bg-gray-700 w-3/4 border-2 border-green-600 p-2 m-2"
+                id="book-cipher" placeholder="The numbers (cipher) like 1/2/3 /6/1/1"></textarea>
+            <br />
+            <button
+                class="flex-shrink-0 bg-purple-600 text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200"
+                onclick="threeNumBookCipher()" id="three-num-book-cipher-button">Deciper</button>
+            <button
+                class="flex-shrink-0 bg-purple-600 text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200"
+                onclick="saveThreeNumBookCipher()" id="three-num-book-cipher-button">Save</button>
+            <button
+                class="flex-shrink-0 bg-purple-600 text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200"
+                onclick="loadSelectedSave('three-num-book-cipher')" id="three-num-book-cipher-button">Load</button>
+            <button
+                class="flex-shrink-0 bg-red-600 text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-200"
+                onclick="deleteSaves('three-num-book-cipher')" id="three-num-book-cipher-button">Delete Saves</button>
+            <label class="block text-left" style="max-width: 400px">
+                <span>Previous Saves</span>
+                <select class="previousSaves form-select block w-full mt-1 text-gray-900">
+                </select>
+            </label>
+            <br />
+            <p class="result"></p>
     </div>
 </body>
+
 </html>
