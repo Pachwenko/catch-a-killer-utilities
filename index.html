@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 
-<body onload="populateSavesDropdown('three-num-book-cipher')" class="overflow-hidden m-2 text-gray-200 bg-gray-900">
+<body onload="populateSavesDropdown('three-num-book-cipher')" class="m-2 text-gray-200 bg-gray-900">
     <div class="m-4">
         <h1 class="text-3xl font-extrabold">Hunt A Killer Cipher Utilities</h1>
         <p>Some useful tools made to aid in figuring out the puzzles during the <a href="https://www.huntakiller.com/"
@@ -22,25 +22,27 @@
     <div id="three-num-book-cipher" class="container border-4 border-black p-3 mx-auto">
         <h2 class="text-xl font-extrabold">Three number book cipher</h1>
             <br />
-            <textarea class="input-book text-white bg-gray-700 w-3/4 border-2 border-green-600 p-2 m-2" id="book-text"
+            <textarea class="input-book text-white bg-gray-700 md:w-3/4 border-2 border-green-600 p-2 m-2" id="book-text"
                 placeholder="The book to use"></textarea>
             <br />
-            <textarea class="input-cipher text-white bg-gray-700 w-3/4 border-2 border-green-600 p-2 m-2"
+            <textarea class="input-cipher text-white bg-gray-700 md:w-3/4 border-2 border-green-600 p-2 m-2"
                 id="book-cipher" placeholder="The numbers (cipher) like 1/2/3 /6/1/1"></textarea>
             <br />
-            <button
-                class="flex-shrink-0 bg-purple-600 text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200 ml-2"
-                onclick="threeNumBookCipher()" id="three-num-book-cipher-button">Deciper</button>
-            <button
-                class="flex-shrink-0 bg-purple-600 text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200"
-                onclick="saveThreeNumBookCipher()" id="three-num-book-cipher-button">Save</button>
-            <button
-                class="flex-shrink-0 bg-purple-600 text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200"
-                onclick="loadSelectedSave('three-num-book-cipher')" id="three-num-book-cipher-button">Load</button>
-            <button
-                class="flex-shrink-0 bg-red-600 text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-200"
-                onclick="deleteSaves('three-num-book-cipher')" id="three-num-book-cipher-button">Delete Saves</button>
-            <label class="block text-left ml-2 w-1/3 flex p-2">
+            <div class="ml-2">
+                <button
+                    class="flex-shrink-0 bg-purple-600 text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200"
+                    onclick="threeNumBookCipher()" id="three-num-book-cipher-button">Deciper</button>
+                <button
+                    class="flex-shrink-0 bg-purple-600 text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200"
+                    onclick="saveThreeNumBookCipher()" id="three-num-book-cipher-button">Save</button>
+                <button
+                    class="flex-shrink-0 bg-purple-600 text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200"
+                    onclick="loadSelectedSave('three-num-book-cipher')" id="three-num-book-cipher-button">Load</button>
+                <button
+                    class="flex-shrink-0 bg-red-600 text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-200"
+                    onclick="deleteSaves('three-num-book-cipher')" id="three-num-book-cipher-button">Delete Saves</button>
+            </div>
+            <label class="block text-left ml-2 md:w-1/3 flex p-2">
                 <span>Previous Saves</span>
                 <select class="previousSaves select px-4 py-3 w-full text-gray-900">
                 </select>
