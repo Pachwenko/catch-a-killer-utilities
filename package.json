@@ -6,7 +6,7 @@
   "author": "Pachwenko <pmccart4096@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "yarn run tailwindcss -o tailwind.css",
+    "build": "NODE_ENV=production yarn run tailwindcss -o tailwind.css",
     "test": "jest"
   },
   "dependencies": {
