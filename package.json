@@ -1,0 +1,18 @@
+{
+  "name": "catch-a-killer-utilities",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Pachwenko/hunt-a-killer-utilities.git",
+  "author": "Pachwenko <pmccart4096@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn run tailwindcss -o tailwind.css",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.3.4",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.3.11",
+    "tailwindcss": "^2.2.19"
+  }
+}

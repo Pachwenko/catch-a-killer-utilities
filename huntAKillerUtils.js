@@ -16,9 +16,8 @@ function threeNumBookCipher() {
   cipher.split('\n').forEach(row => {
     let newWord = '';
     row.split(' ').forEach((x) => {
-      console.log(x);
+      if (!x.trim()) { return; }
       threeNums = x.split('/');
-      console.log(threeNums[0] - 1);
       if (bookRows[threeNums[0] - 1].indexOf(' ') > -1) {
         // only enter when the book row has spaces (words)
         newWord += bookRows[threeNums[0] - 1].split(' ')[threeNums[1] - 1][threeNums[2] - 1];
