@@ -4,16 +4,31 @@ const THREE_NUM_BOOK_CIPHER_ID = "three-num-book-cipher";
 
 function threeNumBookCipher() {
   let mainDiv = document.getElementById(THREE_NUM_BOOK_CIPHER_ID);
-  let inputText = mainDiv.getElementsByClassName("input-book")[0].value;
-  let inputCipher = mainDiv.getElementsByClassName("input-cipher")[0].value;
+  let book = mainDiv.getElementsByClassName("input-book")[0].value;
+  let cipher = mainDiv.getElementsByClassName("input-cipher")[0].value;
   let resultsElement = mainDiv.getElementsByClassName("result")[0];
-  if (!(inputText && inputCipher && resultsElement)) {
+  if (!(book && cipher && resultsElement)) {
     return;
   }
-  console.log(mainDiv);
-  console.log(inputText);
-  console.log(inputCipher);
-  console.log(resultsElement);
+  let bookRows = [];
+  resultsElement.textContent = '';
+  book.split('\n').forEach((row) => { bookRows.push(row); });
+  cipher.split('\n').forEach(row => {
+    let newWord = '';
+    row.split(' ').forEach((x) => {
+      console.log(x);
+      threeNums = x.split('/');
+      console.log(threeNums[0] - 1);
+      if (bookRows[threeNums[0] - 1].indexOf(' ') > -1) {
+        // only enter when the book row has spaces (words)
+        newWord += bookRows[threeNums[0] - 1].split(' ')[threeNums[1] - 1][threeNums[2] - 1];
+      } else {
+        newWord += bookRows[threeNums[0] - 1][threeNums[2] - 1];
+      }
+    });
+    resultsElement.appendChild(document.createTextNode(newWord));
+    resultsElement.appendChild(document.createElement("br"));
+  });
 }
 
 // end cipher logic
