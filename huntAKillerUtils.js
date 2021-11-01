@@ -11,16 +11,23 @@ function threeNumBookCipher() {
     return;
   }
   let bookRows = [];
-  resultsElement.textContent = '';
-  book.split('\n').forEach((row) => { bookRows.push(row); });
-  cipher.split('\n').forEach(row => {
-    let newWord = '';
-    row.split(' ').forEach((x) => {
-      if (!x.trim()) { return; }
-      threeNums = x.split('/');
-      if (bookRows[threeNums[0] - 1].indexOf(' ') > -1) {
+  resultsElement.textContent = "";
+  book.split("\n").forEach((row) => {
+    bookRows.push(row);
+  });
+  cipher.split("\n").forEach((row) => {
+    let newWord = "";
+    row.split(" ").forEach((x) => {
+      if (!x.trim()) {
+        return;
+      }
+      threeNums = x.split("/");
+      if (bookRows[threeNums[0] - 1].indexOf(" ") > -1) {
         // only enter when the book row has spaces (words)
-        newWord += bookRows[threeNums[0] - 1].split(' ')[threeNums[1] - 1][threeNums[2] - 1];
+        newWord +=
+          bookRows[threeNums[0] - 1].split(" ")[threeNums[1] - 1][
+            threeNums[2] - 1
+          ];
       } else {
         newWord += bookRows[threeNums[0] - 1][threeNums[2] - 1];
       }
